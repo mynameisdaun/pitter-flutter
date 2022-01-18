@@ -22,20 +22,31 @@ class MyApp extends StatelessWidget {
         home: Consumer<PageNotifier>(
           builder: (context, pageNotifier, child) {
             return Navigator(
-                pages: [
-                  MaterialPage(
-                      key: ValueKey(MyHomePage.pageName),
-                      child: MyHomePage(title: 'Flutter 1')
-                  ),
-                  if(pageNotifier.currentPage == AuthPage.pageName) AuthPage(),
-                ],
-                onPopPage:(route, result) {
-                  if(!route.didPop(result)) {
-                    return false;
-                  }
-                  return true;
+              pages: [
+                AuthPage()
+              ],
+              onPopPage: (route, result) {
+                if(!route.didPop(result)) {
+                  return false;
                 }
+                return true;
+              },
             );
+            // return Navigator(
+            //     pages: [
+            //       MaterialPage(
+            //           key: ValueKey(MyHomePage.pageName),
+            //           child: MyHomePage(title: 'Flutter 1')
+            //       ),
+            //       if(pageNotifier.currentPage == AuthPage.pageName) AuthPage(),
+            //     ],
+            //     onPopPage:(route, result) {
+            //       if(!route.didPop(result)) {
+            //         return false;
+            //       }
+            //       return true;
+            //     }
+            // );
           },
         ),
       ),
