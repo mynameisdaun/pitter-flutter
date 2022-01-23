@@ -16,4 +16,8 @@ class PageNotifier extends ChangeNotifier {
     _currentPage = name;
     notifyListeners();
   }
+
+  void kakaoAuth() {
+
+  }
 }

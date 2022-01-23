@@ -2,7 +2,7 @@ import 'package:diet/provider/page_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:kakao_flutter_sdk/all.dart';
 
 class AuthPage extends Page {
   static final String pageName = 'AuthPage';
@@ -47,7 +47,7 @@ class _AuthWidgetState extends State<AuthWidget> {
       child: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                  fit: BoxFit.cover, image: AssetImage('assets/giphy.gif'))),
+                  fit: BoxFit.cover, image: AssetImage('assets/exercise.gif'))),
           child: Scaffold(
             backgroundColor: Colors.transparent,
             body: SafeArea(
@@ -55,16 +55,8 @@ class _AuthWidgetState extends State<AuthWidget> {
                 key: _formKey,
                 child: ListView(
                   reverse: true,
-                  padding: EdgeInsets.all(16),
+                  padding: EdgeInsets.all(12),
                   children: [
-                    SizedBox(
-                      height: 16,
-                    ),
-                    CircleAvatar(
-                      backgroundColor: Colors.white54,
-                      radius: 36,
-                      child: Image.asset('assets/logo.png'),
-                    ),
                     SizedBox(
                       height: 16,
                     ),
@@ -133,7 +125,7 @@ class _AuthWidgetState extends State<AuthWidget> {
                       color: Colors.white54,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(_cornerRadius)),
-                      padding: EdgeInsets.all(16),
+                      padding: EdgeInsets.all(12),
                       child: Text( _isRegister ? "Register" : "Login"),
                     ),
                     SizedBox(
@@ -146,29 +138,36 @@ class _AuthWidgetState extends State<AuthWidget> {
                       indent: 16,
                       endIndent: 16,
                     ),
-                    ButtonBar(
-                      alignment: MainAxisAlignment.center,
-                      children: [
-                        _buildSocialButton('assets/login-naver.png', () {
-                          print("hi");
-                        }),
-                        _buildSocialButton('assets/login-kakao.png', () {
-                          print("hi");
-                        }),
-                        _buildSocialButton('assets/login-google.png', () {
-                          print("hi");
-                        }),
-                      ],
+                    // ElevatedButton.icon(
+                    //     style: ElevatedButton.styleFrom(
+                    //       primary: Colors.white,
+                    //       onPrimary: Colors.black87,
+                    //       minimumSize: Size(double.infinity, 50),
+                    //     ),
+                    //     icon: FaIcon(FontAwesomeIcons.google),
+                    //     onPressed: signIn,
+                    //     label: Text('Google Signin')),
+                    IconButton(
+                      iconSize: 50.0,
+                      icon: Image.asset('assets/login-google.png'),
+                      onPressed: () {
+                      },
                     ),
-                    ElevatedButton.icon(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.white,
-                          onPrimary: Colors.black87,
-                          minimumSize: Size(double.infinity, 50),
-                        ),
-                        icon: FaIcon(FontAwesomeIcons.google),
-                        onPressed: signIn,
-                        label: Text('Google Signin'))
+                    IconButton(
+                      iconSize: 50.0,
+                      icon: Image.asset('assets/login-naver.png'),
+                      onPressed: () {
+
+                      },
+                    ),
+                    IconButton(
+                      iconSize: 50.0,
+                      icon: Image.asset('assets/login-kakao.png'),
+                      onPressed: () {
+                        KakaoContext.clientId = 'dbd7b805e63d45b418a671b539090548';
+
+                      },
+                    ),
                   ].reversed.toList(),
                 ),
               ),
