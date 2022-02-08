@@ -1,4 +1,5 @@
 import 'package:diet/pages/UserProfilePage.dart';
+import 'package:diet/pages/calendar_exmaple_page.dart';
 import 'package:diet/pages/splash.dart';
 import 'package:diet/provider/user_profile_provider.dart';
 import 'package:flutter/cupertino.dart';
@@ -91,6 +92,25 @@ class _KakaoLoginPageState extends State<KakaoLoginPage> {
                 color: Colors.black45,
                 child: Text(
                   '스플래쉬 페이지로 이동',
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: CupertinoButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => TableBasicsExample())
+                  );
+                },
+                color: Colors.blue,
+                child: Text(
+                  '달력으 이동',
                   style: TextStyle(
                     fontSize: 15,
                     color: Colors.white,

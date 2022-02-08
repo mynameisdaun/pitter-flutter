@@ -3,8 +3,11 @@ import 'package:diet/provider/user_profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'common/pitterConstant.dart';
+
+
+
 void main() {
-  // runApp(MyApp());
   runApp(
     MultiProvider(
       providers: [
@@ -19,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'KakaoLogin',
+      title: 'PITTER',
       home: SplashPage(),
     );
   }
