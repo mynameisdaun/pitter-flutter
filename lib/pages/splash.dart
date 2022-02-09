@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:diet/pages/UserProfilePage.dart';
+import 'package:diet/pages/create_feed_page.dart';
 import 'package:diet/pages/ranking_match_page.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
@@ -45,12 +46,12 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
       //var response = dio.get('http://172.20.10.2:8080/member/')
       Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => home())
+          MaterialPageRoute(builder: (context) => createFeedPage())
       );
     } else {
       Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => home())
+          MaterialPageRoute(builder: (context) => createFeedPage())
       );
     }
   }
