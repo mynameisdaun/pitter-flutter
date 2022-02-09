@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:diet/pages/UserProfilePage.dart';
-import 'package:diet/pages/home.dart';
+import 'package:diet/pages/ranking_match_page.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +50,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     } else {
       Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => KakaoLoginPage())
+          MaterialPageRoute(builder: (context) => home())
       );
     }
   }
